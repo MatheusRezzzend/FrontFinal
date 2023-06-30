@@ -1,0 +1,16 @@
+<h2>Área de Depósito</h2>
+
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form">
+  <div class="formTipo">
+    <mat-form-field>
+      <mat-label>Valor de depósito:</mat-label>
+      <input matInput formControlName="valorDeposito">
+      <mat-error *ngIf="handleError('valorDeposito', 'required')">O valor de depósito é obrigatório</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="formTipo">
+    <button mat-raised-button color="warn" type="submit" style="background-color: darkorange; color: white;">Salvar</button>
+  </div>
+
+</form>

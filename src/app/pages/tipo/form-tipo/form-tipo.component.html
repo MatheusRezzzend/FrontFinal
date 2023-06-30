@@ -1,0 +1,77 @@
+
+<form
+  [formGroup]="formGroup"
+  (ngSubmit)="onSubmit()"
+  class="form"
+>
+  <div class="formTipo">
+    <h1>Formulário para {{acao}}</h1>
+
+    <mat-form-field>
+      <mat-label>Nome:</mat-label>
+      <input matInput formControlName="nome">
+      <mat-error *ngIf="handleError('nome', 'required')">
+        O nome é obrigatório
+      </mat-error>
+      <mat-error *ngIf="handleError('nome', 'minlength')">
+        Mínimo 3 caracteres
+      </mat-error>
+      <mat-error *ngIf="handleError('nome', 'maxlength')">
+        Máximo 50 caracteres
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Sobrenome:</mat-label>
+      <input matInput formControlName="sobrenome">
+      <mat-error *ngIf="handleError('sobrenome', 'required')">
+        O sobrenome é obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Agencia:</mat-label>
+      <input matInput formControlName="agencia">
+      <mat-error *ngIf="handleError('agencia', 'required')">
+        A agencia é obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Conta:</mat-label>
+      <input matInput formControlName="numeroConta">
+      <mat-error *ngIf="handleError('numeroConta', 'required')">
+        O número da Conta é obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Contato:</mat-label>
+      <input matInput formControlName="contato">
+      <mat-error *ngIf="handleError('contato', 'required')">
+        O contato é obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Saldo:</mat-label>
+      <input matInput formControlName="saldoConta">
+      <mat-error *ngIf="handleError('saldoConta', 'required')">
+        O saldo é obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Status:</mat-label>
+      <mat-select formControlName="statusConta">
+        <mat-option value="ATIVO">Ativo</mat-option>
+        <mat-option value="INATIVO">Inativo</mat-option>
+      </mat-select>
+      <mat-error *ngIf="handleError('statusConta', 'required')">
+        Status é obrigatorio
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="warn" class="bt_salvar" type="submit">Salvar</button>
+  </div>
+</form>

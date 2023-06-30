@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Contas</mat-card-title>
+  </mat-card-header>
+  <mat-card-actions>
+    <div class="button-group">
+      <button mat-raised-button color="warn" class="bt_adicionar" [routerLink]="['/tipo','novo']">
+        <mat-icon>add</mat-icon>
+        <span>Adicionar</span>
+      </button>
+      <button mat-raised-button color="warn" class="bt_adicionar" [routerLink]="['/tipo', 'deposito']">
+        <mat-icon>add</mat-icon>
+        <span>Depositar</span>
+      </button>
+    </div>
+  </mat-card-actions>
+
+  <mat-card-content>
+    <router-outlet></router-outlet>
+  </mat-card-content>
+</mat-card>
